@@ -8,60 +8,64 @@ enum CylinderState {
 }
 public class RotateCylinder : MonoBehaviour {
 
-    private Rigidbody _rigidbody;
+    public Rigidbody Rigidbody;
     public float SpeedRotation;
     public float Damper;
-   // public Transform FrontPosition;
-   // public Transform [] CylinderPosition = new Transform [12];
+    private Quaternion _closestVerge;
     [SerializeField] private CylinderState _currentCylinderState;
-    [SerializeField] private Vector3[] _CylinderPosition = new Vector3[12];
+
+    [SerializeField] private Vector3[] _cylinderRotationEuler = new Vector3[12];
+    private Quaternion[] _cylinderRotation = new Quaternion[12];
+
     void Start() {
+
         _currentCylinderState = CylinderState.Idle;
-        _rigidbody = GetComponent<Rigidbody>();
-        _rigidbody.maxAngularVelocity = Mathf.Infinity;
+        Rigidbody.maxAngularVelocity = Mathf.Infinity;
+
+        for (int i = 0; i < _cylinderRotationEuler.Length; i++) {
+            _cylinderRotation[i] = Quaternion.Euler(_cylinderRotationEuler[i]);
+        }
+
     }
 
     private void Update() {
 
         if (_currentCylinderState == CylinderState.Idle) {
-            StopCylinder();
-          //  transform.rotation = Quaternion.Lerp(transform.rotation, GetClosest().rotation, Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, GetClosest(), Time.deltaTime * 3f);
         } else if (_currentCylinderState == CylinderState.Rotate) {
 
-            if (_rigidbody.angularVelocity.x > -Damper) {
-               
+            if (Rigidbody.angularVelocity.x > -Damper) {
+                StopCylinder();
                 SetState(CylinderState.Idle);
-                
             }
-        }
+        }  
     }
 
     void FixedUpdate() {
         if (Input.GetKeyDown(KeyCode.Space)) {
             SetState(CylinderState.Rotate);
-            _rigidbody.AddRelativeTorque(-SpeedRotation, 0f, 0f);
+            Rigidbody.AddRelativeTorque(-Random.Range(SpeedRotation-150f, SpeedRotation+150f), 0f, 0f);
         }
     }
 
-    void SetState(CylinderState state) {
-        _currentCylinderState = state;
-    }
+    void SetState(CylinderState state) => _currentCylinderState = state;
+    
 
     void StopCylinder() {
-        _rigidbody.isKinematic = true;
-        _rigidbody.isKinematic = false;
+        Rigidbody.isKinematic = true;
+        Rigidbody.isKinematic = false;
     }
 
-    // Transform GetClosest() {
-    //    float minDistance = Mathf.Infinity;
-    //    Transform closestVerge = null;
-    //    for (int i = 0; i < CylinderPosition.Length; i++) {
-    //        float distance = Vector3.Distance(FrontPosition.position, CylinderPosition[i].position);
-    //        if (distance < minDistance) {
-    //            minDistance = distance;
-    //            closestVerge = CylinderPosition[i];
-    //        }
-    //    }
-    //    return closestVerge;
-    //}
+    Quaternion GetClosest() {
+        float minAngle = Mathf.Infinity;
+
+        for (int i = 0; i < _cylinderRotation.Length; i++) {
+            float angle = Quaternion.Angle(transform.rotation, _cylinderRotation[i]);
+            if (angle <= minAngle) {
+                minAngle = angle;
+                _closestVerge = _cylinderRotation[i];
+            }
+        }
+        return _closestVerge;
+    }
 }
