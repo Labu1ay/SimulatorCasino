@@ -44,7 +44,7 @@ public class RotateCylinder : MonoBehaviour {
     void FixedUpdate() {
         if (Input.GetKeyDown(KeyCode.Space)) {
             SetState(CylinderState.Rotate);
-            Rigidbody.AddRelativeTorque(-Random.Range(SpeedRotation-150f, SpeedRotation+150f), 0f, 0f);
+            Rigidbody.AddRelativeTorque(-Random.Range(SpeedRotation-100f, SpeedRotation+100f), 0f, 0f);
         }
     }
 

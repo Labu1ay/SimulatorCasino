@@ -6,23 +6,32 @@ public class Icon : MonoBehaviour
 {
     private Vector3 _startScale;
     private Vector3 _selectScale;
+
+    private bool _increase;
+    private bool _decrease;
     void Start()
     {
         _startScale = transform.localScale;
-        _selectScale = _startScale * 1.2f;
+        _selectScale = _startScale * 1.4f;
     }
 
     public void IncreaseScale() {
-        transform.localScale = Vector3.Lerp(_startScale, _selectScale, Time.deltaTime * 3f);
+        _increase = true;
+        _decrease = false;
     }
-
     public void DecreaseScale() {
-        transform.localScale = Vector3.Lerp(_selectScale, _startScale, Time.deltaTime * 3f);
+        _decrease = true;
+        _increase = false;
     }
 
 
     void Update()
     {
-        
+        if (_decrease) {
+            transform.localScale = Vector3.Lerp(transform.localScale, _startScale, Time.deltaTime * 10f);
+        }
+        if (_increase) {
+            transform.localScale = Vector3.Lerp(transform.localScale, _selectScale, Time.deltaTime * 10f);
+        }
     }
 }
