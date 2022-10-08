@@ -26,7 +26,6 @@ public class RayShooter : MonoBehaviour {
             Icon icon = hit.collider.GetComponent<Icon>();
             if (icon) {
                 _tempIcon = icon;
-
                 _tempIcon.IncreaseScale();
             } else {
                 Unselect(_tempIcon);
