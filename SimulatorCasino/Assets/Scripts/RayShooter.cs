@@ -6,12 +6,14 @@ public class RayShooter : MonoBehaviour {
 
     private Icon _tempIcon;
     private float _timer;
+
     private void Update() {
         if (_timer > 0f) {
             return;
         }
         _timer += _timer + Time.deltaTime;
     }
+
     void FixedUpdate() {
         if (_timer == 0f) {
             return; //it is necessary that the Ray starts working with a delay of one frame

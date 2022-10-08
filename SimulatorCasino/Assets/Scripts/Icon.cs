@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Icon : MonoBehaviour
@@ -18,16 +16,6 @@ public class Icon : MonoBehaviour
         _selectScale = _startScale * 1.4f;
     }
 
-    public void IncreaseScale() {
-        _increase = true;
-        _decrease = false;
-    }
-    public void DecreaseScale() {
-        _decrease = true;
-        _increase = false;
-    }
-
-
     void Update()
     {
         if (_decrease) {
@@ -39,7 +27,14 @@ public class Icon : MonoBehaviour
             TurnOnAnimation();
         }
     }
-
+    public void IncreaseScale() {
+        _increase = true;
+        _decrease = false;
+    }
+    public void DecreaseScale() {
+        _decrease = true;
+        _increase = false;
+    }
 
     [ContextMenu("TurnOnAnimation")]
     public void TurnOnAnimation() => Animator.SetBool("IconBool", true);

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -7,12 +5,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource AudioRotationCylinder;
     public RotateCylinder RotateCylinder;
     private int _oneAction;
-    void Start()
-    {
-        
-    }
-
-  
+    
     void LateUpdate()
     {
         if(RotateCylinder.CurrentCylinderState == CylinderState.Rotate) {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum CylinderState {
@@ -22,6 +20,8 @@ public class RotateCylinder : MonoBehaviour {
 
     public AudioSource AudioStopCylinder;
 
+    private bool _checkPressButton;
+
     private void Awake() {
         for (int i = 0; i < _cylinderRotationEuler.Length; i++) {
             _cylinderRotation[i] = Quaternion.Euler(_cylinderRotationEuler[i]); //conversion from euler angles to quaternions
@@ -29,7 +29,6 @@ public class RotateCylinder : MonoBehaviour {
         transform.rotation = _cylinderRotation[Random.Range(0, 12)]; //random position of the cylinder
     }
     void Start() {
-
         CurrentCylinderState = CylinderState.Idle;
         Rigidbody.maxAngularVelocity = Mathf.Infinity;
     }
@@ -49,20 +48,20 @@ public class RotateCylinder : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+       // if (Input.GetKeyDown(KeyCode.Space)) {
+        if (_checkPressButton) {
             SetState(CylinderState.Rotate);
             Rigidbody.AddRelativeTorque(-Random.Range(SpeedRotation-100f, SpeedRotation+100f), 0f, 0f); //assign a random torque to the cylinder
+            _checkPressButton = false;
         }
     }
 
     void SetState(CylinderState state) => CurrentCylinderState = state;
     
-
     void StopCylinder() {
         Rigidbody.isKinematic = true;
         Rigidbody.isKinematic = false;
     }
-
 
     //When the cylinder stop - find the closest edge to the screen in order to tighten it
     Quaternion GetClosest() {
@@ -77,4 +76,6 @@ public class RotateCylinder : MonoBehaviour {
         }
         return _closestVerge;
     }
+    public void StartRotationForButton() => _checkPressButton = true;
+
 }
