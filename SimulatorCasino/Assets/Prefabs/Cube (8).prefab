@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 1628847770607133382}
   - component: {fileID: 6506437728329131237}
   - component: {fileID: 6725072003584999199}
+  - component: {fileID: 7906798102568394764}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -181,6 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3647b8407a54e24984b6299ccb47ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 7906798102568394764}
 --- !u!65 &6725072003584999199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -194,6 +196,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.99999994, y: 0.99999994, z: 6.1232336e-17}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &7906798102568394764
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628847770607133377}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99dd16aacdffafb49b3c129a527ee6d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1908743102828173027
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7824277676095810366
 Transform:
   m_ObjectHideFlags: 0
@@ -454,7 +475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3352788793134945263
 Transform:
   m_ObjectHideFlags: 0

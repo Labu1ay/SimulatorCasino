@@ -17,15 +17,16 @@ public class RotateCylinder : MonoBehaviour {
     [SerializeField] private Vector3[] _cylinderRotationEuler = new Vector3[12];
     private Quaternion[] _cylinderRotation = new Quaternion[12];
 
+    private void Awake() {
+        for (int i = 0; i < _cylinderRotationEuler.Length; i++) {
+            _cylinderRotation[i] = Quaternion.Euler(_cylinderRotationEuler[i]);
+        }
+        transform.rotation = _cylinderRotation[Random.Range(0, 12)];
+    }
     void Start() {
 
         _currentCylinderState = CylinderState.Idle;
         Rigidbody.maxAngularVelocity = Mathf.Infinity;
-
-        for (int i = 0; i < _cylinderRotationEuler.Length; i++) {
-            _cylinderRotation[i] = Quaternion.Euler(_cylinderRotationEuler[i]);
-        }
-
     }
 
     private void Update() {

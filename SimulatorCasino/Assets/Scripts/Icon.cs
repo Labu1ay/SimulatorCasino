@@ -9,6 +9,9 @@ public class Icon : MonoBehaviour
 
     private bool _increase;
     private bool _decrease;
+
+    public Animator Animator;
+
     void Start()
     {
         _startScale = transform.localScale;
@@ -29,9 +32,19 @@ public class Icon : MonoBehaviour
     {
         if (_decrease) {
             transform.localScale = Vector3.Lerp(transform.localScale, _startScale, Time.deltaTime * 10f);
+            TurnOffAnimation();  
         }
         if (_increase) {
             transform.localScale = Vector3.Lerp(transform.localScale, _selectScale, Time.deltaTime * 10f);
+            TurnOnAnimation();
         }
     }
+
+
+    [ContextMenu("TurnOnAnimation")]
+    public void TurnOnAnimation() => Animator.SetBool("IconBool", true);
+
+    [ContextMenu("TurnOffAnimation")]
+    public void TurnOffAnimation() => Animator.SetBool("IconBool", false);
+    
 }
