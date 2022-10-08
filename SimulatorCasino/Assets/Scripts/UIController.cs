@@ -8,7 +8,10 @@ public class UIController : MonoBehaviour {
 
     private RotateCylinder[] _rotateCylinders;
 
+    public Outline Outline;
+    private Color _color;
     void Start() {
+        _color = Outline.effectColor;
         _rotateCylinders = FindObjectsOfType<RotateCylinder>();
     }
 
@@ -17,8 +20,11 @@ public class UIController : MonoBehaviour {
 
             if (RotateCylinder.CurrentCylinderState == CylinderState.Rotate) {
                 Buttons[i].interactable = false;
+                Outline.effectColor = Color.red;
             } else {
                 Buttons[i].interactable = true;
+                Outline.effectColor = _color;
+
             }
         }
     }
