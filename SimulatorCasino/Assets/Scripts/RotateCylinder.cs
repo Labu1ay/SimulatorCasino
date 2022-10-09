@@ -45,7 +45,6 @@ public class RotateCylinder : MonoBehaviour {
             }
         }  
     }
-
     void FixedUpdate() {
         if (_checkPressButton) {
             SetState(CylinderState.Rotate);
