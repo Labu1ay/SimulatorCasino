@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1b6db43869d64c1418d1961082da1109, type: 2}
+    - target: {fileID: 6553576914741692002, guid: c200cafa1296cbf4f8323cbc5c132fb8, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7598037079474682266, guid: c200cafa1296cbf4f8323cbc5c132fb8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -21,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7598037080126238597, guid: c200cafa1296cbf4f8323cbc5c132fb8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 7598037080126238597, guid: c200cafa1296cbf4f8323cbc5c132fb8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -61,7 +65,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7598037080126238598, guid: c200cafa1296cbf4f8323cbc5c132fb8, type: 3}
       propertyPath: m_Name
-      value: Cylinder_12
+      value: 1_Cylinder_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196202455875701244, guid: c200cafa1296cbf4f8323cbc5c132fb8, type: 3}
+      propertyPath: Damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196202455875701244, guid: c200cafa1296cbf4f8323cbc5c132fb8, type: 3}
+      propertyPath: SpeedRotation
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 9217586531487462493, guid: c200cafa1296cbf4f8323cbc5c132fb8, type: 3}
       propertyPath: m_Materials.Array.data[0]

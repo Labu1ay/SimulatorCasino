@@ -72,10 +72,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8051b79abca2418419fe473989a94ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentCylinderState: 0
   Rigidbody: {fileID: 6553576914741692002}
   SpeedRotation: 1000
   Damper: 4.5
-  _currentCylinderState: 0
   _cylinderRotationEuler:
   - {x: 0, y: 0, z: 0}
   - {x: 30, y: 0, z: 0}
@@ -89,6 +89,8 @@ MonoBehaviour:
   - {x: 270, y: 0, z: 0}
   - {x: 300, y: 0, z: 0}
   - {x: 330, y: 0, z: 0}
+  AudioStopCylinder: {fileID: 0}
+  ParticleSystemIcon: {fileID: 0}
 --- !u!1001 &4200527850104176243
 PrefabInstance:
   m_ObjectHideFlags: 0

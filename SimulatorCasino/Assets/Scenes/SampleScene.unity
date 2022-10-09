@@ -2580,18 +2580,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2041969483134046306, guid: 4b4837db5533932469067cbb05637445, type: 3}
-      propertyPath: Damper
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041969483134046306, guid: 4b4837db5533932469067cbb05637445, type: 3}
-      propertyPath: FrontPosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041969483134046306, guid: 4b4837db5533932469067cbb05637445, type: 3}
-      propertyPath: SpeedRotation
-      value: 800
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041969483134046306, guid: 4b4837db5533932469067cbb05637445, type: 3}
       propertyPath: AudioStopCylinder
       value: 
       objectReference: {fileID: 500568992}
@@ -2599,10 +2587,6 @@ PrefabInstance:
       propertyPath: ParticleSystemIcon
       value: 
       objectReference: {fileID: 439440545}
-    - target: {fileID: 4123901422855938044, guid: 4b4837db5533932469067cbb05637445, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b4837db5533932469067cbb05637445, type: 3}
 --- !u!1001 &5159150800663408470
@@ -2661,18 +2645,6 @@ PrefabInstance:
       value: 3_Cylinder_12
       objectReference: {fileID: 0}
     - target: {fileID: 6821824515279899916, guid: a7082a7712b40ac42b482b70ee451fd1, type: 3}
-      propertyPath: Damper
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6821824515279899916, guid: a7082a7712b40ac42b482b70ee451fd1, type: 3}
-      propertyPath: FrontPosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6821824515279899916, guid: a7082a7712b40ac42b482b70ee451fd1, type: 3}
-      propertyPath: SpeedRotation
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6821824515279899916, guid: a7082a7712b40ac42b482b70ee451fd1, type: 3}
       propertyPath: AudioStopCylinder
       value: 
       objectReference: {fileID: 500568992}
@@ -2680,10 +2652,6 @@ PrefabInstance:
       propertyPath: ParticleSystemIcon
       value: 
       objectReference: {fileID: 711959225}
-    - target: {fileID: 8918956108578914962, guid: a7082a7712b40ac42b482b70ee451fd1, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7082a7712b40ac42b482b70ee451fd1, type: 3}
 --- !u!1001 &5312701022575488450
@@ -2742,18 +2710,6 @@ PrefabInstance:
       value: 4_Cylinder_12
       objectReference: {fileID: 0}
     - target: {fileID: 5997041239119237389, guid: ccff21cb39463604c819d2936725822b, type: 3}
-      propertyPath: Damper
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5997041239119237389, guid: ccff21cb39463604c819d2936725822b, type: 3}
-      propertyPath: FrontPosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5997041239119237389, guid: ccff21cb39463604c819d2936725822b, type: 3}
-      propertyPath: SpeedRotation
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 5997041239119237389, guid: ccff21cb39463604c819d2936725822b, type: 3}
       propertyPath: AudioStopCylinder
       value: 
       objectReference: {fileID: 500568992}
@@ -2761,10 +2717,6 @@ PrefabInstance:
       propertyPath: ParticleSystemIcon
       value: 
       objectReference: {fileID: 961379851}
-    - target: {fileID: 8526518231835926163, guid: ccff21cb39463604c819d2936725822b, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccff21cb39463604c819d2936725822b, type: 3}
 --- !u!1001 &5379639668029639328
@@ -2774,22 +2726,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5658491533408287225, guid: 04c4b6d05c75ecc4c92fcdfa3fe2e065, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7776170653441455719, guid: 04c4b6d05c75ecc4c92fcdfa3fe2e065, type: 3}
-      propertyPath: Damper
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7776170653441455719, guid: 04c4b6d05c75ecc4c92fcdfa3fe2e065, type: 3}
-      propertyPath: FrontPosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7776170653441455719, guid: 04c4b6d05c75ecc4c92fcdfa3fe2e065, type: 3}
-      propertyPath: SpeedRotation
-      value: 1400
-      objectReference: {fileID: 0}
     - target: {fileID: 7776170653441455719, guid: 04c4b6d05c75ecc4c92fcdfa3fe2e065, type: 3}
       propertyPath: AudioStopCylinder
       value: 
@@ -2973,22 +2909,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5241923659282865177, guid: 4f20b7ba67f349e40ab79bc7762cccec, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913545653675856775, guid: 4f20b7ba67f349e40ab79bc7762cccec, type: 3}
-      propertyPath: Damper
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913545653675856775, guid: 4f20b7ba67f349e40ab79bc7762cccec, type: 3}
-      propertyPath: FrontPosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913545653675856775, guid: 4f20b7ba67f349e40ab79bc7762cccec, type: 3}
-      propertyPath: SpeedRotation
-      value: 600
-      objectReference: {fileID: 0}
     - target: {fileID: 7913545653675856775, guid: 4f20b7ba67f349e40ab79bc7762cccec, type: 3}
       propertyPath: AudioStopCylinder
       value: 

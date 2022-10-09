@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 4_Cylinder_12
       objectReference: {fileID: 0}
+    - target: {fileID: 6821824515279899916, guid: a7082a7712b40ac42b482b70ee451fd1, type: 3}
+      propertyPath: SpeedRotation
+      value: 1200
+      objectReference: {fileID: 0}
     - target: {fileID: 6836453466889829795, guid: a7082a7712b40ac42b482b70ee451fd1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
