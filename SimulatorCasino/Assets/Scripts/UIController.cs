@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
 
-    public Button [] Buttons;
+    public Button Button;
     public RotateCylinder RotateCylinder;
 
     private RotateCylinder[] _rotateCylinders;
@@ -16,16 +16,12 @@ public class UIController : MonoBehaviour {
     }
 
     void Update() {
-        for (int i = 0; i < Buttons.Length; i++) {
-
-            if (RotateCylinder.CurrentCylinderState == CylinderState.Rotate) {
-                Buttons[i].interactable = false;
-                Outline.effectColor = Color.red;
-            } else {
-                Buttons[i].interactable = true;
-                Outline.effectColor = _color;
-
-            }
+        if (RotateCylinder.CurrentCylinderState == CylinderState.Rotate) {
+            Button.interactable = false;
+            Outline.effectColor = Color.red;
+        } else {
+            Button.interactable = true;
+            Outline.effectColor = _color;
         }
     }
 

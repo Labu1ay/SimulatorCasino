@@ -1597,8 +1597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2194abe53be6b24581bc95132c498c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Buttons:
-  - {fileID: 2118240202}
+  Button: {fileID: 2118240202}
   RotateCylinder: {fileID: 1234758999}
   Outline: {fileID: 403881690}
 --- !u!198 &1126700515 stripped
