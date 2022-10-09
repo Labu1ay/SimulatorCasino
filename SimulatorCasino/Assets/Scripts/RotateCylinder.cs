@@ -22,6 +22,8 @@ public class RotateCylinder : MonoBehaviour {
 
     private bool _checkPressButton;
 
+    public ParticleSystem ParticleSystemIcon;
+
     private void Awake() {
         for (int i = 0; i < _cylinderRotationEuler.Length; i++) {
             _cylinderRotation[i] = Quaternion.Euler(_cylinderRotationEuler[i]); //conversion from euler angles to quaternions
@@ -38,29 +40,26 @@ public class RotateCylinder : MonoBehaviour {
         if (CurrentCylinderState == CylinderState.Idle) {
             transform.rotation = Quaternion.Lerp(transform.rotation, GetClosest(), Time.deltaTime * 3f);
         } else if (CurrentCylinderState == CylinderState.Rotate) {
-
             if (Rigidbody.angularVelocity.x > -Damper) {
-                AudioStopCylinder.PlayOneShot(AudioStopCylinder.clip);
-                StopCylinder();
-                SetState(CylinderState.Idle);
+                StopCylinder(); 
             }
         }  
     }
 
     void FixedUpdate() {
-       // if (Input.GetKeyDown(KeyCode.Space)) {
         if (_checkPressButton) {
             SetState(CylinderState.Rotate);
-            Rigidbody.AddRelativeTorque(-Random.Range(SpeedRotation-100f, SpeedRotation+100f), 0f, 0f); //assign a random torque to the cylinder
+            Rigidbody.AddRelativeTorque(-Random.Range(SpeedRotation-50f, SpeedRotation+50f), 0f, 0f); //assign a random torque to the cylinder
             _checkPressButton = false;
         }
     }
 
-    void SetState(CylinderState state) => CurrentCylinderState = state;
-    
     void StopCylinder() {
         Rigidbody.isKinematic = true;
         Rigidbody.isKinematic = false;
+        Invoke("StartParticleSystem", 0.2f);
+        AudioStopCylinder.PlayOneShot(AudioStopCylinder.clip);
+        SetState(CylinderState.Idle);
     }
 
     //When the cylinder stop - find the closest edge to the screen in order to tighten it
@@ -76,6 +75,8 @@ public class RotateCylinder : MonoBehaviour {
         }
         return _closestVerge;
     }
-    public void StartRotationForButton() => _checkPressButton = true;
 
+    public void StartRotationForButton() => _checkPressButton = true;
+    void SetState(CylinderState state) => CurrentCylinderState = state;
+    void StartParticleSystem() => ParticleSystemIcon.Play();
 }
